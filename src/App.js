@@ -1,7 +1,19 @@
+
+import react, {useEffect} from "react"
 import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
 
 function App() {
+  useEffect(()=>{
+    axios.get("/bulldog/skadi")
+    .then(data=>{
+      console.log("++++++")
+      console.log(data.data.bulldog)
+      console.log("++++++")
+    })
+  },[])
+
   return (
     <div className="App">
       <header className="App-header">
